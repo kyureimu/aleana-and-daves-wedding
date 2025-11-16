@@ -1857,4 +1857,40 @@ form label {
   justify-content: center;
 }
 
+
+
+/* FAQ STYLES */
+.faq-wrap {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 15px 0;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #000;
+}
+
+.faq-answer {
+  display: none;
+  padding-top: 10px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
 /*# sourceMappingURL=style.css.map */
