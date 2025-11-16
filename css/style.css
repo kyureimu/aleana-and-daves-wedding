@@ -1852,4 +1852,9 @@ form label {
   opacity: 0;
 }
 
+.flex-center{
+  display: flex;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=style.css.map */
