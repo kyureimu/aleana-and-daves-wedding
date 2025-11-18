@@ -1859,10 +1859,16 @@ form label {
 
 
 
+
 /* FAQ STYLES */
 .faq-wrap {
   width: 100%;
-  margin-top: 20px;
+}
+
+#digitals-faq{
+  margin-top: 4rem;
+    margin-bottom: 4rem;
+
 }
 
 .faq-item {
@@ -1894,3 +1900,14 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+.image-slot {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.image-slot img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
