@@ -53,7 +53,61 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+#digitals-header {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* adjust as needed */
+}
 
+/* Scrolling container */
+.scrolling-bg {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%; /* enough space for duplicated tracks */
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Each track of images */
+.scroll-track {
+  display: flex;
+  width: 100%;
+  animation: scrollBG 60s linear infinite;
+}
+
+.scroll-track img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+/* Animate scroll */
+@keyframes scrollBG {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Overlay stays on top */
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3); /* optional dark overlay */
+  z-index: 1;
+}
+
+/* Header content stays above scrolling images */
+#digitals-header .container {
+  position: relative;
+  z-index: 2;
+}
+</style>
 </head>
 
 <body>
@@ -71,33 +125,41 @@
 							<li><a href="#digitals-hero">Home</a></li>
 							<li><a href="#digitals-couple">Couple</a></li>
 							<li><a href="#digitals-services">Wedding Details</a></li>
-							<li><a href="#digitals-when-where">When & Where</a></li>
 							<li><a href="#digitals-faq">FAQ</a></li>
-							<li><a href="#digitals-accommodation">Accommodation</a></li>
-							<li><a href="#digitals-reception">Reception</a></li>
-							<li><a href="#digitals-registry">Registry</a></li>
-							<li><a href="#digitals-comments">Guestbook</a></li>
-							<li><a href="#digitals-contact">Contact</a></li>
 						</ul>
 					</div>
 				</div>
 		</nav>
 
-	<header id="digitals-header" class="digitals-cover" role="banner"
-		style="background-image:url(images/image.png);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center">
-						<div class="display-t">
-							<div class="display-tc animate-box" data-animate-effect="fadeIn">
-								<h1>Aleana &amp; Dave</h1>
-								<h2>We are getting married!</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-		</header>
+<header id="digitals-header" class="digitals-cover" role="banner">
+  <div class="overlay"></div>
+
+  <!-- Seamless scrolling background -->
+  <div class="scrolling-bg">
+    <div class="scroll-track">
+      <img src="images\header-bg1.png" alt="" />
+      <img src="images\header-bg2.png" alt="" />
+      <!-- You can add more images here -->
+    </div>
+    <div class="scroll-track">
+      <img src="images\header-bg1.png" alt="" />
+      <img src="images\header-bg2.png" alt="" />
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <div class="display-t">
+          <div class="display-tc animate-box" data-animate-effect="fadeIn">
+            <h1>Aleana &amp; Dave</h1>
+            <h2>We are getting married!</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 		<div id="digitals-couple">
 			<div class="container text-center">
@@ -109,7 +171,7 @@
 					</div>
 				</div>
 				<div class="simply-countdown simply-countdown-one"></div>
-				<p><a href="#" class="btn btn-default btn-sm">Save the date</a></p>
+				<p><a href="#" class="btn btn-default btn-sm" style="color: white; background-color: black">Save the date</a></p>
 
 			</div>
 		</div>
@@ -180,7 +242,7 @@
 			</div>
 		</div>
 
-		<div id="digitals-event" class="digitals-bg" style="background-image:url(images/img_bg_3.jpg);">
+		<div id="digitals-event" class="digitals-bg" style="background-image:url(images/HTP_0161.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -198,7 +260,23 @@
 										<h3>Main Ceremony</h3>
 										<div class="event-col">
 											<i class="icon-clock"></i>
+											<span>2:00 PM</span>
 											<span>4:00 PM</span>
+										</div>
+										<div class="event-col">
+											<i class="icon-calendar"></i>
+											<span>Saturday 07</span>
+											<span>February, 2026</span>
+										</div>
+									
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6 text-center">
+									<div class="event-wrap animate-box">
+										<h3>Cocktail Hour</h3>
+										<div class="event-col">
+											<i class="icon-clock"></i>
+											<span>5:00 PM</span>
 											<span>6:00 PM</span>
 										</div>
 										<div class="event-col">
@@ -211,27 +289,11 @@
 								</div>
 								<div class="col-md-3 col-sm-6 text-center">
 									<div class="event-wrap animate-box">
-										<h3>Reception & Party</h3>
+										<h3>RECEPTION & PARTY</h3>
 										<div class="event-col">
 											<i class="icon-clock"></i>
-											<span>7:00 PM</span>
-											<span>12:00 AM</span>
-										</div>
-										<div class="event-col">
-											<i class="icon-calendar"></i>
-											<span>Saturday 07</span>
-											<span>February, 2026</span>
-										</div>
-									
-									</div>
-								</div>
-								<div class="col-md-3 col-sm-6 text-center">
-									<div class="event-wrap animate-box">
-										<h3>Main Ceremony</h3>
-										<div class="event-col">
-											<i class="icon-clock"></i>
-											<span>4:00 PM</span>
 											<span>6:00 PM</span>
+											<span>10:00 PM</span>
 										</div>
 										<div class="event-col">
 											<i class="icon-calendar"></i>
@@ -243,11 +305,11 @@
 								</div>
 								<div class="col-md-3 col-sm-6 text-center">
 									<div class="event-wrap animate-box">
-										<h3>Reception & Party</h3>
+										<h3>After Party</h3>
 										<div class="event-col">
 											<i class="icon-clock"></i>
-											<span>7:00 PM</span>
-											<span>12:00 AM</span>
+											<span>10:00 PM</span>
+											<span>12:00 PM</span>
 										</div>
 										<div class="event-col">
 											<i class="icon-calendar"></i>
@@ -291,11 +353,21 @@
 							<div class="feature-copy">
 								<h3>St. Joseph, Husband of Mary Parish Church</h3>
 								<p>Bangad, Cabanatuan City, Nueva Ecija</p>
-
-								  <div class="image-slot">
-               					 <img src="images\st joseph husband of mary.png" alt="Reception Image">
-            					</div>
-							</div>
+								<p>
+								<a href="https://www.google.com/maps?ll=15.491763,121.025002&z=11&t=m&hl=en&gl=PH&mapclient=embed&cid=13978967561854035041" class="btn btn-default btn-sm" 
+									style="color: white; background-color: black; padding: 10px 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+									<span style="flex: 1; text-align: center;">View Google Maps</span>
+									<i class="fa-solid fa-chevron-right"></i>
+								</a>
+								</p>
+								<p>
+								<a href="https://www.waze.com/en/live-map/directions/ph/central-luzon/cabanatuan-city/st.-joseph,-husband-of-mary-parish-church-bangad,-cabanatuan-city,-nueva-ecija-(diocese-of-cabanatuan)?place=ChIJT6W4aUYvlzMRYaQEC-9E_8E" class="btn btn-default btn-sm" 
+									style="color: white; background-color: white; padding: 10px 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+									<span style="color: black;flex: 1; text-align: center;">View Directions on Waze</span>
+									<i class="fa-solid fa-chevron-right" style="color:black;"></i>
+								</a>
+								</p>
+								</div>
 						</div>
 
 					</div>
@@ -339,9 +411,19 @@
 							<div class="feature-copy">
 								<h3>Sparkles Events Place</h3>
 								<p>Talipapa, Cabanatuan City, Nueva Ecija</p>
-									  <div class="image-slot">
-               					 <img src="images\sPARKLES EVENTS PLACE.png" alt="Reception Image">
-            					</div>
+								<p>
+								<a href="https://www.google.com/maps?ll=15.47305,120.929205&z=16&t=m&hl=en&gl=PH&mapclient=embed&cid=5717696109446754955" class="btn btn-default btn-sm" 
+									style="color: white; background-color: black; padding: 10px 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+									<span style="flex: 1; text-align: center;">View Google Maps</span>
+									<i class="fa-solid fa-chevron-right"></i>
+								</a>
+								</p>
+								<a href="https://www.waze.com/en/live-map/directions/ph/central-luzon/cabanatuan-city/sparkles-events-place?place=ChIJddMKDQAplzMRi_I0YVFWWU8" class="btn btn-default btn-sm" 
+									style="color: white; background-color: white; padding: 10px 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+									<span style="color:black;flex: 1; text-align: center;" >View Waze Direction</span>
+									<i class="fa-solid fa-chevron-right" style="color:black;"></i>
+								</a>
+								</p>
 							</div>
 						</div>
 
@@ -362,170 +444,187 @@
 				</div>
 			</div>
 		</div>
-					<div id="digitals-weddingparty">
-			<div class="container">
-				<div class="col-md-8 col-md-offset-2 text-center digitals-heading">
-					<span>The</span>
-					<h2>Wedding Party</h2>
-				</div>
+		
+		<div id="digitals-weddingparty">
+    <div class="container">
+        <div class="row">
+     <div class="col-md-8 col-md-offset-2 text-center digitals-heading">
+                    <span class="white-text" >The</span>
+                    <h2 class="white-text">Wedding Party</h2>
+                </div>
+            <!-- LEFT CONTENT AREA -->
+            <div class="col-md-9">
 
-				<!-- ENTIRE ENTOURAGE CONTENT -->
-				<div class="row text-center" style="margin-top: 40px;">
+           
 
+                <!-- ENTIRE ENTOURAGE CONTENT -->
+                <div class="row text-center" style="margin-top: 40px;">
 
-					<!-- Parents -->
-					<div class="row" style="margin-bottom: 40px;">
-						<div class="col-md-6">
-							<h2 style="font-family: 'Sacramento', Arial, serif; font-style: italic;">Parents of the Groom</h2>
-							<p>MR. LAURO MESDE<br> MRS. MARLYN MESDE</p>
-						</div>
-						<div class="col-md-6">
-							<h2 style="font-family: 'Sacramento', Arial, serif; font-style: italic;">Parents of the Bride</h2>
-							<p>MR. ALEX MARANAN<br> MRS. ANA LIZA MARANAN</p>
-						</div>
-					</div>
+                    <!-- Parents -->
+                    <div class="row" style="margin-bottom: 40px;">
+                        <div class="col-md-offset-3 col-md-3">
+                            <h2 style="font-family: 'Sacramento', Arial, serif; font-style: italic;" class="white-text">Parents of the Groom</h2>
+                            <p>MR. LAURO MESDE<br> MRS. MARLYN MESDE</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h2 style="font-family: 'Sacramento', Arial, serif; font-style: italic;" class="white-text">Parents of the Bride</h2>
+                            <p>MR. ALEX MARANAN<br> MRS. ANA LIZA MARANAN</p>
+                        </div>
+                    </div>
 
-					<!-- Principal Sponsors -->
-					<h2 style="font-family: 'Sacramento', Arial, serif; font-style: italic; margin-bottom: 20px;">Principal Sponsors</h2>
+                    <!-- Principal Sponsors -->
+                    <h2 style="font-family: 'Sacramento', Arial, serif; font-style: italic; margin-bottom: 20px;" class="white-text">Principal Sponsors</h2>
 
-					<div class="row" style="margin-bottom: 40px;">
-						<div class="col-md-6">
-							<p>
-								DR. VICTORIO MUNGCAL<br>
-								DR. CARLOS OANES<br>
-								MR. ALAN HERRADURA<br>
-								MR. ZALDY FADERON
-							</p>
-						</div>
-						<div class="col-md-6">
-							<p>
-								MRS. GRACE MURILLO<br>
-								DR. LORENA VALERIO<br>
-								MRS. LILIBETH SALVADOR<br>
-								MRS. BEBIANA MOLINAR<br>
-								MRS. ROSANNA MESDE-TORRES<br>
-								MS. NEMELIE NUGOY
-							</p>
-						</div>
-					</div>
+                    <div class="row" style="margin-bottom: 40px;">
+                        <div class="col-md-offset-3 col-md-3">
+                            <p>
+                                DR. VICTORIO MUNGCAL<br>
+                                DR. CARLOS OANES<br>
+                                MR. ALAN HERRADURA<br>
+                                MR. ZALDY FADERON
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                MRS. GRACE MURILLO<br>
+                                DR. LORENA VALERIO<br>
+                                MRS. LILIBETH SALVADOR<br>
+                                MRS. BEBIANA MOLINAR<br>
+                                MRS. ROSANNA MESDE-TORRES<br>
+                                MS. NEMELIE NUGOY
+                            </p>
+                        </div>
+                    </div>
 
-					<!-- Secondary Sponsors -->
-					<h2 style="font-family: 'Sacramento', Arial, serif; font-style: italic; margin-bottom: 20px;">Secondary Sponsors</h2>
+                    <!-- Secondary Sponsors -->
+                    <h2 style="font-family: 'Sacramento', Arial, serif; font-style: italic; margin-bottom: 20px;" class="white-text">Secondary Sponsors</h2>
 
-					<div class="row" style="margin-bottom: 40px;">
-						<div class="col-md-6">
-							<h3 style="font-family: 'Sacramento', Arial, serif; font-style: italic;">Groomsmen</h3>
-							<p>
-								KYLE MANUEL<br>
-								MARK JOSEPH MESDE<br>
-								KURT RANZEL FLORES<br>
-								ABRAHAM PAUL AQUITANIA<br>
-								IAN GABRIEL DELA CRUZ
-							</p>
-						</div>
+                    <div class="row" style="margin-bottom: 40px;">
+                        <div class="col-md-offset-3 col-md-3">
+                            <h3 style="font-family: 'Sacramento', Arial, serif; font-style: italic;" class="white-text">Groomsmen</h3>
+                            <p>
+                                KYLE MANUEL<br>
+                                MARK JOSEPH MESDE<br>
+                                KURT RANZEL FLORES<br>
+                                ABRAHAM PAUL AQUITANIA<br>
+                                IAN GABRIEL DELA CRUZ
+                            </p>
+                        </div>
 
-						<div class="col-md-6">
-							<h3 style="font-family: 'Sacramento', Arial, serif; font-style: italic;">Bridesmaids</h3>
-							<p>
-								JHUZTINE ALVAREZ<br>
-								BEA BIANCA SALVADOR<br>
-								NICOLETTE SALVADOR<br>
-								HANNAH MARY SALTARIN<br>
-								KAITLIN TABELL<br>
-								QUEENIE PASCUA<br>
-								KRIZZA MAE TUPPAL
-							</p>
-						</div>
-					</div>
+                        <div class="col-md-3">
+                            <h3 style="font-family: 'Sacramento', Arial, serif; font-style: italic;" class="white-text">Bridesmaids</h3>
+                            <p>
+                                JHUZTINE ALVAREZ<br>
+                                BEA BIANCA SALVADOR<br>
+                                NICOLETTE SALVADOR<br>
+                                HANNAH MARY SALTARIN<br>
+                                KAITLIN TABELL<br>
+                                QUEENIE PASCUA<br>
+                                KRIZZA MAE TUPPAL
+                            </p>
+                        </div>
+                    </div>
 
-					<!-- Ring Bearer -->
-					<h3 style="font-family: 'Sacramento', Arial, serif; font-style: italic;">Ring Bearer</h3>
-					<p style="margin-bottom: 40px;">MR. LINO VALERIO</p>
+                    <!-- Ring Bearer -->
+                    <h3 style="font-family: 'Sacramento', Arial, serif; font-style: italic;" class="white-text">Ring Bearer</h3>
+                    <p style="margin-bottom: 40px;">MR. LINO VALERIO</p>
 
-					<!-- Flower Girls -->
-					<h3 style="font-family: 'Sacramento', Arial, serif; font-style: italic;">Flower Girls</h3>
-					<p>MRS. AMELIA VALERIO</p>
+                    <!-- Flower Girls -->
+                    <h3 style="font-family: 'Sacramento', Arial, serif; font-style: italic;" class="white-text">Flower Girls</h3>
+                    <p>MRS. AMELIA VALERIO</p>
 
-				</div>
-			</div>
-		</div>
+                </div>
+            </div>
 
-		<div id="digitals-faq">
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center digitals-heading">
-						<span>Frequently Asked Questions</span>
-						<h2>F.A.Qs</h2>
-					</div>
-				</div>
+            <!-- RIGHT GIF AREA -->
+            <div class="col-md-3 gif-wrapper">
+                <img id="weddingGif" src="images\the-wedding-party-polaroid.gif" alt="Wedding Animation">
+            </div>
 
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 animate-box">
+        </div>
+    </div>
+</div>
+<div id="digitals-faq">
+  <div class="container">
+    <div class="row animate-box">
+      <div class="col-md-8 col-md-offset-2 text-center digitals-heading">
+        <span>Frequently Asked Questions</span>
+        <h2>F.A.Qs</h2>
+      </div>
+    </div>
 
-						<div class="faq-wrap">
+    <!-- New row for image + FAQ -->
+    <div class="row animate-box align-items-center">
+      <!-- Left side image -->
+      <div class="col-md-4 text-center">
+        <img src="images\faq-ribbon.png" alt="FAQ Graphic" class="img-responsive" style="max-width: 100%; height: auto; padding-top:4rem;">
+      </div>
 
-							<!-- FAQ ITEM 1 -->
-							<div class="faq-item">
-								<button class="faq-question">
-									IS IT REQUIRED TO RSVP?
-								</button>
-								<div class="faq-answer">
-									<p>Yes, RSVP is required. Seats are limited for both the ceremony and the reception. Kindly submit your RSVP on or before December 07, 2025, so we can finalize the headcount and seating arrangements.</p>
-									<strong>NO RSVP, No Entry</strong>
-								</div>
-							</div>
+      <!-- Right side FAQs -->
+      <div class="col-md-8">
+        <div class="faq-wrap">
 
-							<!-- FAQ ITEM 2 -->
-							<div class="faq-item">
-								<button class="faq-question">
-									WILL THE CEREMONY, COCKTAIL HOUR & RECEPTION BE HELD INDOORS OR OUTDOORS?
-								</button>
-								<div class="faq-answer">
-									<p><strong>Ceremony:</strong> This will be held indoors at the church. <br/>
-									<strong> Cocktail Hour: </strong>This will take place outdoors, so please feel free to bring any items you may need for comfort (e.g., handheld fan, sunscreen, light shawl, mosquito repellent). <br/>
-									<strong>Reception:</strong> The reception will be held indoor</p>
-								</div>
-							</div>
+          <!-- FAQ ITEM 1 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              IS IT REQUIRED TO RSVP?
+            </button>
+            <div class="faq-answer">
+              <p>Yes, RSVP is required. Seats are limited for both the ceremony and the reception. Kindly submit your RSVP on or before December 07, 2025, so we can finalize the headcount and seating arrangements.</p>
+              <strong>NO RSVP, No Entry</strong>
+            </div>
+          </div>
 
-							<!-- FAQ ITEM 3 -->
-							<div class="faq-item">
-								<button class="faq-question">
-									IS THERE A DRESS CODE AND MOTIF?
-								</button>
-								<div class="faq-answer">
-									<p>To maintain the event’s formality, we kindly ask everyone to follow the dress code. Guests who are <strong>NOT in the appropriate attire will not be allowed entry.</strong></p>
-									<a href="#">Dress Code Guide </a>
-								</div>
-							</div>
+          <!-- FAQ ITEM 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              WILL THE CEREMONY, COCKTAIL HOUR & RECEPTION BE HELD INDOORS OR OUTDOORS?
+            </button>
+            <div class="faq-answer">
+              <p><strong>Ceremony:</strong> This will be held indoors at the church. <br/>
+              <strong> Cocktail Hour: </strong>This will take place outdoors, so please feel free to bring any items you may need for comfort (e.g., handheld fan, sunscreen, light shawl, mosquito repellent). <br/>
+              <strong>Reception:</strong> The reception will be held indoors</p>
+            </div>
+          </div>
 
-							<!-- FAQ ITEM 4 -->
-							<div class="faq-item">
-								<button class="faq-question">
-									CAN WE BRING EXTRA GUESTS OR CHILDREN?
-								</button>
-								<div class="faq-answer">
-									<p>We love your enthusiasm, but due to limited seating, we can only accommodate those who were personally invited.</p>
-								</div>
-							</div>
+          <!-- FAQ ITEM 3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              IS THERE A DRESS CODE AND MOTIF?
+            </button>
+            <div class="faq-answer">
+              <p>To maintain the event’s formality, we kindly ask everyone to follow the dress code. Guests who are <strong>NOT in the appropriate attire will not be allowed entry.</strong></p>
+              <a href="#">Dress Code Guide </a>
+            </div>
+          </div>
 
-							<!-- FAQ ITEM 5 -->
-							<div class="faq-item">
-								<button class="faq-question">
-									WHAT IF I HAVE FOOD ALLERGIES OR DIETARY RESTRICTIONS?
-								</button>
-								<div class="faq-answer">
-									<p>Your comfort matters to us. Please indicate any food allergies or dietary restrictions in the RSVP form so we can coordinate with our caterer.</p>
-								</div>
-							</div>
+          <!-- FAQ ITEM 4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              CAN WE BRING EXTRA GUESTS OR CHILDREN?
+            </button>
+            <div class="faq-answer">
+              <p>We love your enthusiasm, but due to limited seating, we can only accommodate those who were personally invited.</p>
+            </div>
+          </div>
 
-						</div>
+          <!-- FAQ ITEM 5 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              WHAT IF I HAVE FOOD ALLERGIES OR DIETARY RESTRICTIONS?
+            </button>
+            <div class="faq-answer">
+              <p>Your comfort matters to us. Please indicate any food allergies or dietary restrictions in the RSVP form so we can coordinate with our caterer.</p>
+            </div>
+          </div>
 
-					</div>
-				</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-			</div>
-		</div>
-
+	
 			<div id="digitals-gallery" class="digitals-section-gray">
 			<div class="container">
 				<div class="row">
@@ -673,12 +772,12 @@
 							<small class="block">Designed by <a href="/" target="_blank">Digit-Als Creatives</a></small>
 						</p>
 						<p>
-						<ul class="digitals-social-icons">
+						<!-- <ul class="digitals-social-icons">
 							<li><a href="#"><i class="icon-twitter"></i></a></li>
 							<li><a href="#"><i class="icon-facebook"></i></a></li>
 							<li><a href="#"><i class="icon-linkedin"></i></a></li>
 							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
+						</ul> -->
 						</p>
 					</div>
 				</div>
@@ -731,5 +830,6 @@
 	</script>
 
 </body>
+
 
 </html>
