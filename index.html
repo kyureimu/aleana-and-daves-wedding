@@ -165,8 +165,13 @@
 					</div>
 				</div>
 				<div class="simply-countdown simply-countdown-one"></div>
-				<p><a href="#" class="btn btn-default btn-sm" style="color: white; background-color: black">Save the date</a></p>
-
+				<p>
+					<a href="#" onclick="addToCalendar()" 
+					class="btn btn-default btn-sm"
+					style="color: white; background-color: black">
+					Save the date
+					</a>
+				</p>
 			</div>
 		</div>
 
@@ -672,8 +677,6 @@
             <div class="col-md-8 col-md-offset-2 text-center digitals-heading animate-box">
                 <span>Our Memories</span>
                 <h2>Wedding Gallery</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                    there live the blind texts.</p>
             </div>
         </div>
 
@@ -842,6 +845,56 @@
 
 
 	</script>
+
+	<script>
+function addToCalendar() {
+    // WEDDING DETAILS
+    const title = "Aleana & Dave's Wedding";
+    const startDate = "20260207T140000";  // Feb 7, 2026 at 2:00 PM
+    const endDate   = "20260208T000000";  // Feb 8, 2026 at 12:00 AM (midnight)
+    const details = "We are getting married! Please join us on our special day.";
+    const location = "St. Joseph Husband of Mary Parish - Bangad";
+
+    // --- GOOGLE CALENDAR LINK ---
+    const googleUrl =
+        "https://www.google.com/calendar/render?action=TEMPLATE" +
+        "&text=" + encodeURIComponent(title) +
+        "&dates=" + startDate + "/" + endDate +
+        "&details=" + encodeURIComponent(details) +
+        "&location=" + encodeURIComponent(location);
+
+    // Detect if user is on iPhone, iPad, or Mac (Apple Calendar users)
+    const isApple = /iPhone|iPad|Macintosh/.test(navigator.userAgent);
+
+    if (!isApple) {
+        // Open Google Calendar for Android + Windows users
+        window.open(googleUrl, "_blank");
+    } else {
+        // Create ICS file for Apple users (Apple Calendar, Outlook, etc.)
+        const icsContent =
+            "BEGIN:VCALENDAR\n" +
+            "VERSION:2.0\n" +
+            "BEGIN:VEVENT\n" +
+            "DTSTART:" + startDate + "\n" +
+            "DTEND:" + endDate + "\n" +
+            "SUMMARY:" + title + "\n" +
+            "DESCRIPTION:" + details + "\n" +
+            "LOCATION:" + location + "\n" +
+            "END:VEVENT\n" +
+            "END:VCALENDAR";
+
+        const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Aleana-Dave-Wedding.ics";
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+}
+</script>
+
 
 </body>
 
