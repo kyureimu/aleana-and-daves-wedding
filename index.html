@@ -797,12 +797,6 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-<!-- 
-		<audio autoplay>
-			<source src="music\Final_Fantasy_15_-_Sunset_Waltz_(mp3.pm).mp3" type="audio/mpeg" >
-			Your browser does not support the audio element.
-		</audio>
-		 -->
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -827,6 +821,7 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
+
 	<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 	<script>
 		const lightbox = GLightbox({
@@ -835,6 +830,24 @@
 			loop: true,
 			zoomable: true,
 		});
+	</script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+	<script>
+	// Initialize background music
+	var bgMusic = new Howl({
+		src: ['music/Rob Deniel - Sinta.mp3'], // direct MP3 link
+		autoplay: true,
+		loop: true,
+		volume: 0.2
+	});
+
+	// Optionally start on first click for autoplay restrictions
+	document.body.addEventListener('click', function(){
+		if(!bgMusic.playing()){
+		bgMusic.play();
+		}
+	}, {once:true});
 	</script>
 
 	<script>
