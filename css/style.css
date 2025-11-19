@@ -445,6 +445,18 @@ h1, h2, h3, h4, h5, h6, figure {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+.digitals-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
 .digitals-video:hover .overlay {
   background: rgba(0, 0, 0, 0.7);
 }
@@ -2112,29 +2124,4 @@ form label {
 
 .white-text{
   color:white !important;
-}
-
-
-#digitals-header {
-  position: relative;
-  overflow: hidden;
-}
-
-#digitals-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%; /* double width for smooth scroll */
-  height: 100%;
-  background-image: url('images/header-bg1.png'), url('images/header-bg2.png'); /* your images */
-  background-size: cover;
-  background-repeat: repeat-x;
-  animation: scrollBG 60s linear infinite;
-  z-index: -1; /* behind content */
-}
-
-@keyframes scrollBG {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }
