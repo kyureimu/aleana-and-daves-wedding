@@ -226,6 +226,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 40px;
   z-index: 1001;
 }
+
 @media screen and (max-width: 768px) {
   .digitals-nav {
     padding: 20px 0;
@@ -258,10 +259,10 @@ h1, h2, h3, h4, h5, h6, figure {
   display: inline;
 }
 .digitals-nav ul li a {
-  font-size: 14px;
+  font-size: 20px;
   padding: 30px 10px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255);
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
